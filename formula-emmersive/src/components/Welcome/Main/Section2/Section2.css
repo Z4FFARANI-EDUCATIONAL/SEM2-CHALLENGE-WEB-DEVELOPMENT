@@ -1,0 +1,63 @@
+.Welcomesection-two{
+    width: 100%;
+    background-color: #2210f4;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px auto;
+}
+
+.section-two-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    margin: 0 auto;
+    max-width: 1024px;
+
+}
+
+.video{
+    min-width: 400px;
+    width: 100%;
+}
+
+.introdução-card{
+    max-width: 320px;
+    max-height: 290px;
+    margin-bottom: 35px;
+}
+
+.blue-frame-one-sec2{
+    max-width: 450px;
+    background: rgb(34,16,244);
+    background: linear-gradient(330deg, rgb(255, 255, 255) 0%, #2210f4 50%);
+    padding-right: 4px; /* largura da borda */
+    padding-bottom: 4px; /* largura da borda */
+}
+
+.blue-frame-inner-one-sec2{
+    background-color: #2210f4; /* Fundo interno */
+    padding-right: 15px; /* Conteúdo interno */
+    padding-bottom: 12px; /* Conteúdo interno */
+}
+
+.blue-frame-two-sec2{
+    max-width: 600px;
+    background: rgb(34,16,244);
+    background: linear-gradient(330deg, rgb(255, 255, 255) 0%, #2210f4 50%);
+    padding-right: 4px; 
+    padding-bottom: 4px; 
+}
+
+.blue-frame-inner-two-sec2{
+    background-color: #2210f4;
+    padding-right: 12px; 
+    padding-bottom: 12px;
+}
+
+.introduction{
+    display: none;
+}

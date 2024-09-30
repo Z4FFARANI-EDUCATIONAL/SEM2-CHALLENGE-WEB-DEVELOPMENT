@@ -1,0 +1,224 @@
+main{
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.topPageF1-deco{
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+.middlePageF1-deco{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    
+}
+
+.bottomPageF1-deco{
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+.F1-content{
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-top: 80px;
+    background-image: url("../../assets/images/middlePageF1-deco.png");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 900px 900px;
+    background-repeat: no-repeat;
+}
+
+.F1-logo{
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+
+.carrossel-btns{
+    max-width: 470px;
+    width: 470px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.carrossel-btns a{
+    color: white;
+    font-size: 14px;
+    padding: 0;
+}
+
+.slide-btnsf1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-btnsf1 button{
+    color: white;
+    background-color: #ff0000;
+    border: none;
+    width: 60px;
+    height: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-btnsf1 .left{
+    font-family: "Formula", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+
+
+.slide-btnsf1 .right{
+    font-family: "Formula", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 8px;
+    margin-left: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+
+.carrossel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.slide-containerf1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    height: 300px;
+    padding: 10px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.slide-containerf1 img{
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.slides{
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 10px;
+}
+
+.slide{
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.slides{
+    position: relative;
+    z-index: 3;
+}
+
+.F1-content p{
+    font-family: "Numans", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 80px;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.slide-text-container{
+    display: flex;
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.slides-textos{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide-text{
+    min-width: 100%;
+}
+
+
+/* BORDA CARROSSEL */
+.slide-containerf1:before, .slide-containerf1:after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #101010,#ff4242, #ff0000, #0f0101, #101010, #0f0101,  #ff4242, #ff0000);
+    background-size: 600% 350%;
+    animation: AnimarBorda 15s linear infinite;
+}
+
+.slide-containerf1:after{
+    position: absolute;
+    top: 0;
+    filter: blur(10px);
+}
+
+@keyframes AnimarBorda {
+    0%{
+        background-position: 600%;
+    }
+    100%{
+        background-position: 0;
+    }    
+} 
+
+.redirect{
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+    padding: 0 0 40px 0;
+}
+
+.redirect img{
+    padding: 8px 0 0 0 ;
+}
+
+
+.redirect a{
+    color: white;
+    font-family: 'Michroma', sans-serif;
+}

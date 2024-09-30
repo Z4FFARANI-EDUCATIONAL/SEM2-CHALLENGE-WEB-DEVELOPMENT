@@ -1,0 +1,122 @@
+.section-one{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1024px;
+}
+
+.section-card{
+    position: relative;
+}
+
+.text-saudacoes{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 50px 0;
+    gap: 70px;
+    width: 100%;
+}
+
+.text-saudacoes h1{
+    font-size: 54px;
+}
+
+.text-saudacoes p{
+    font-family: 'Michroma';
+    font-size: 24px;
+}
+
+.text-saudacoes .saudacoes-anchor{
+    height: 50px;
+    width: 180px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    background: #2210F4;
+    border: none;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-saudacoes .saudacoes-anchor:hover{
+    background-color: #ffffff;
+    color: #2210F4;
+    transition: 0.3s;
+}
+
+.interativa{
+    animation: corMuda 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes corMuda {
+    0%{
+        opacity: 1;  
+    }
+    25%{
+        opacity: 1;
+        color: #C99B26;
+    }
+    75%{
+        opacity: 1;
+        color: #FF1F1F;
+    }
+    100%{
+        opacity: 1;
+        color: #FF2F99;
+    }
+}
+
+.welcome-img{
+    width: 100%;
+    margin-top: -15px;
+}
+
+.blue-frame-one-sec1{
+    max-width: 800px;
+    background: rgb(34,16,244);
+    background: linear-gradient(225deg, rgba(34,16,244,1) 0%, rgba(16,16,16,1) 33%, rgba(16,16,16,1) 66%, rgba(34,16,244,1) 100%);
+    padding: 4px; /* largura da borda */ /* largura da borda */
+}
+
+.blue-frame-inner-one-sec1{
+    background-color: #101010; /* Fundo interno */
+    padding: 15px; /* Conteúdo interno */
+   
+}
+
+.blue-frame-two-sec1{
+    max-width: 800px;
+    background: rgb(34,16,244);
+    background: linear-gradient(225deg, rgba(34,16,244,1) 0%, rgba(16,16,16,1) 33%, rgba(16,16,16,1) 66%, rgba(34,16,244,1) 100%);
+    padding: 4px; 
+
+}
+
+.blue-frame-inner-two-sec1{
+    background-color: #101010;
+    padding: 15px; 
+}
+
+.atras{
+    position: absolute;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    position: absolute;
+    margin-top: 7px;
+}
+
+.frente{
+    position: relative;
+}

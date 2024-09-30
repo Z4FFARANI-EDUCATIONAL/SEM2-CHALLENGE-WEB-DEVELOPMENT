@@ -1,0 +1,167 @@
+header{
+    width: 100%;
+    height: 80px;
+    background-color: #101010;
+}
+
+.header-content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1025px;
+    margin: 0 auto;
+}
+
+.headerBtn-768w{
+    display: none;
+}
+
+.logo-emmersive{
+    width: 140px;
+    cursor: pointer;
+}
+
+.headerBtns{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    max-width: 310px;
+    width: 310px;
+    height: 40px;
+    border-radius: 15px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.scoreBtn{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.newsBtn{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.newsBtn p{
+    font-family: 'Michroma', sans-serif;
+    font-size: 12px;
+}
+
+.headerBtns button{
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-family: 'Michroma', sans-serif;
+    font-size: 12px;
+    height: 100%;
+    width: 100%;
+    color: black;
+}
+
+
+a.blitz-shop2{
+    display: none;
+}
+
+.headerBtns button:hover{
+   background-color: rgb(243, 243, 243);
+
+}
+
+.header-minilogo{
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    background-color: #2210F4;
+    border-radius: 5px;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.header-deco{
+    height: 80px;
+    width: 100px;
+    position: absolute;
+    background-color: transparent;
+    z-index: -1;
+} 
+
+.name-blitz{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+.blitz-qtd{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: transparent;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(251,226,1);
+}
+
+.blitz-icon{
+    width: 15px;
+    height: 20px;
+    
+}
+
+.moldura-user{
+    width: 50px;
+    height: 50px;
+}
+
+.userSaldo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* NAV */
+nav{
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #2210F4;
+}
+
+.nav-cont{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    margin: 5px;
+}
+
+.nav-cont a{
+    background: transparent;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navLiveDot{
+    width: 10px;
+    height: 10px;
+    margin: 0 5px 0 0;
+    animation: pisca 1s ease-in-out infinite alternate;
+}

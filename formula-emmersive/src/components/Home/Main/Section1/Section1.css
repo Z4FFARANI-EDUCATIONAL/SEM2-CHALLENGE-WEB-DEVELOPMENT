@@ -1,0 +1,184 @@
+.Homesection-one{
+    max-width: 1025px;
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column; 
+    padding-bottom: 35px;
+}
+
+.section-title-card{
+    width: 100%;
+    display: flex;
+    flex-direction: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.section-title-card h2{
+    font-weight: 600;
+}
+
+.tiny-share img {
+    height: 30px;
+    width: 30px;
+}
+
+.share-btns{
+    display: flex;
+    gap: 15px;
+    height: 60px;
+    justify-content: center;
+}
+
+.share-btns button{
+    background-color: #2210F4;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.share-btns button:hover{
+    filter: brightness(90%);
+}
+
+.section-title-card.one{
+    align-items: center;
+}
+
+/* BORDAS DE SEÇÃO PERSONALIZADAS */
+.Homeblue-frame-one-sec1{
+    max-width: 1024px;
+    background: rgb(34,16,244);
+    background: linear-gradient(335deg, rgba(34,16,244,1) 0%, rgba(16,16,16,1) 50%);
+    padding-right: 4px; /* largura da borda */
+    padding-bottom: 4px; /* largura da borda */
+}
+
+.Homeblue-frame-inner-one-sec1{
+    background-color: #101010; /* Fundo interno */
+    padding-right: 15px; /* Conteúdo interno */
+    padding-bottom: 12px; /* Conteúdo interno */
+}
+
+.Homeblue-frame-two-sec1{
+    max-width: 1024px;
+    background: rgb(34,16,244);
+    background: linear-gradient(335deg, rgba(34,16,244,1) 0%, rgba(16,16,16,1) 50%);
+    padding-right: 4px; 
+    padding-bottom: 4px; 
+}
+
+.Homeblue-frame-inner-two-sec1{
+    background-color: #101010;
+    padding-right: 12px; 
+    padding-bottom: 12px;
+}
+/* BORDAS DE SEÇÃO PERSONALIZADAS FIM*/
+
+
+.section-card{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-btns{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.big-blue-btn{
+    background-image: url('../../../../assets/images/Babe_ruth.gif');
+    background-size: 310px;
+    background-position-y: bottom;
+    background-position-x: center;
+    height: 80%;
+    width: 230px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.big-blue-btn:hover{
+    filter: brightness(90%);
+}
+
+.blitz-gain{
+    position: absolute;
+    top: 0;
+    background-color: #ffffff;
+    border: 10px solid #101010;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 60px;
+    height: 12%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 28px;
+    color: rgb(251,226,1);
+    gap: 5px;
+    animation: shiny 1s ease-in-out infinite alternate;
+    
+}
+
+@keyframes shiny {
+    0% {
+        text-shadow: 0 0 0px rgb(251,226,1 0);
+    }
+    100% {
+        text-shadow: 0 0 10px rgb(252, 232, 82);
+    }
+}
+
+.blitz-gain img{
+    width: 20px;
+    margin-top: 5px;
+}
+
+.blitz-shop{
+    height: 17%;
+    border: none;
+    border-radius: 5px;
+    color:#2210F4;
+    text-shadow: 0px 3px 4px gray;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 32px;
+    cursor: pointer;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mw425-blitz-shop-btn{
+    display: none;
+}
+
+.blitz-shop:hover{
+    filter: brightness(90%);
+}
+
+.card1{
+    width: 76%;
+}
+.card1 img{
+    width: 100%;
+}
+
+.card1 img:hover{
+    transition: 0.2s;
+    filter: brightness(110%);
+}

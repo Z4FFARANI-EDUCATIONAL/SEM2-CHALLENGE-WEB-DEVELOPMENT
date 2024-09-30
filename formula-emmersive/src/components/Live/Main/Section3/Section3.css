@@ -1,0 +1,130 @@
+.section-three{
+    display: flex;
+    margin: 0 auto;
+    padding: 60px 0;
+    border: 5px solid;
+    border-left: none;
+    border-right: none;
+    max-width: 1024px;
+    position: relative;
+}
+
+.little-e-sec-three{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    right: -50px;
+    background-color: #1D1A28;
+    width: 100px;
+    height: 80px;
+    border-bottom-left-radius: 60px;
+}
+
+.little-e-sec-three img{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+
+.maps{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    background-color: #101010;
+    position: relative;
+    border-radius: 15px;
+    padding: 20px;
+    width: 1024px;
+}
+
+.map-titles{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 40px;
+}
+
+.container-text-shadow{
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+}
+
+.conheca{
+    font-size: 64px;
+    text-shadow: #2210f4;
+
+}
+
+.atras{
+    position: absolute;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    position: absolute;
+    margin-top: 7px;
+
+}
+
+.frente{
+    position: relative;
+    
+}
+
+.map-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.imgcontainer{
+    position: relative;
+    background-color: #101010;
+}
+
+.map-container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #101010,#3d2bff, #2210F4, #02010f, #101010, #02010f, #3d2bff, #2210F4);
+    background-size: 1000% 300%;
+    animation: map-shiny 15s linear infinite;
+}
+
+@keyframes map-shiny {
+    0%{
+        background-position: 600%;
+    }
+    100%{
+        background-position: 0;
+    }    
+    
+}
+
+.map-name{
+    max-width: 850px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.map-name p{
+    font-weight: 400;
+    font-family: 'Michroma', sans-serif;
+    font-size: 32px;
+    margin: 30px 0;
+}
+
+.screen-icons img{
+    cursor: pointer;
+}

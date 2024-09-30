@@ -1,0 +1,109 @@
+.Homesection-two{
+    max-width: 1024px;
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.section-two{
+    margin-top: 70px;
+}
+
+.section-title-card.two{
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.title.two h2{
+    display: flex;
+    justify-content: end;
+}
+
+.card2{
+    position: relative;
+}
+
+.card2 img{
+    width: 100%;
+    max-width: 1024px;
+    cursor: pointer;
+
+}
+
+.card2 img:hover{
+    transition: 0.2s;
+    filter: brightness(110%);
+}
+
+.live-corner{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 170px;
+    height: 60px;
+    background-color: #101010;
+    position: absolute;
+    top: 0;
+    font-family: 'Michroma', sans-serif;
+    font-size: 26px;
+    border-bottom-right-radius: 60px;
+
+}
+
+/* LIVE PONTINHO PISCANTE */
+.live-corner img{
+    width: 35px;
+    height: 35px;
+    margin: 0 10px 0 5px;
+    animation: pisca 1s ease-in-out infinite alternate;
+}
+
+@keyframes pisca {
+    0%{
+        opacity: 0;  
+    }
+    100%{
+        opacity: 1;
+    }    
+}
+
+/* BORDA PERSONALIZADA */
+.Homeblue-frame-one-sec2{
+    max-width: 1024px;
+    background: rgb(34,16,244);
+    background: linear-gradient(30deg, rgba(34,16,244,1) 0%, rgba(16,16,16,1) 50%);
+    padding-left: 4px; /* largura da borda */
+    padding-bottom: 4px; /* largura da borda */
+}
+
+.Homeblue-frame-inner-one-sec2{
+    background-color: #101010; /* Fundo interno */
+    padding-left: 15px; /* Conteúdo interno */
+    padding-bottom: 12px; /* Conteúdo interno */
+}
+
+.Homeblue-frame-two-sec2{
+    max-width: 1024px;
+    background: rgb(34,16,244);
+    background: linear-gradient(30deg, rgba(34,16,244,1) 0%, rgba(16,16,16,1) 50%);
+    padding-left: 4px; 
+    padding-bottom: 4px; 
+}
+
+.Homeblue-frame-inner-two-sec2{
+    background-color: #101010;
+    padding-left: 12px; 
+    padding-bottom: 12px;
+}
+/* BORDAPERSONALIZADA */
+
+button.big-share.sec2{
+    margin-left: 39px;
+}
+
+h1.aposte-blitz{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 22px;
+}

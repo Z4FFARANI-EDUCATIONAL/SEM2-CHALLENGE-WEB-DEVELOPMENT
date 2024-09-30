@@ -1,0 +1,70 @@
+.section-three{
+    max-width: 1024px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.division-bars{
+    width: 100%;
+    font-size: 0px;
+    
+}
+
+.section-three-div{
+    width: 100%;
+    height: 8px;
+    margin: 8px 0;
+    
+}
+
+.section-three-div.gold{
+    background: rgb(16,16,16);
+    background: linear-gradient(90deg, rgba(16,16,16,1) 0%, rgba(201,155,38,1) 50%, rgba(16,16,16,1) 100%);
+}
+
+.section-three-div.red{
+    background: rgb(16,16,16);
+    background: linear-gradient(90deg, rgba(16,16,16,1) 0%, rgba(255,31,31,1) 50%, rgba(16,16,16,1) 100%);
+}
+
+.section-three-div.pink{
+    background: rgb(16,16,16);
+    background: linear-gradient(90deg, rgba(16,16,16,1) 0%, rgba(255,47,153,1) 50%, rgba(16,16,16,1) 100%);
+}
+
+.section-three-div.white{
+    background: rgb(16,16,16);
+    background: linear-gradient(90deg, rgba(16,16,16,1) 0%, rgba(216,216,216,1) 50%, rgba(16,16,16,1) 100%);
+}
+
+.section-three-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.section-three-content p{
+    font-family: "Numans", sans-serif;
+    font-size: 18px;
+    max-width: 800px;
+    text-align: center;
+    margin: 30px 0 70px 0;
+}
+
+.blitz-e-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 80px;
+}
+
+.emmersive{
+    max-width: 600px;
+}
+
+.blitz-logo{
+    max-width: 200px;
+}
