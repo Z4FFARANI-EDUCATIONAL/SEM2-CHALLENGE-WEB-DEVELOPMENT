@@ -23,8 +23,21 @@ import whiteCheck from '../../../../assets/images/white-check.png'
 import blitzLetter from '../../../../assets/images/Blitz-letter.png'
 import blueBlitz from '../../../../assets/images/blue blitz.png'
 import blitz from '../../../../assets/images/blitz.png'
+import { useState } from 'react'
 
 export default function Section2() {
+    const [aposta, setAposta] = useState(0);
+
+    const incrementAposta = () => {
+        setAposta(aposta + 1000);
+    };
+
+    const decrementAposta = () => {
+        if (aposta > 0) {
+            setAposta(aposta - 1000);
+        }
+    };
+
     return (
         <div className="section-two" id="placar">
             <div className="rank">
@@ -200,7 +213,7 @@ export default function Section2() {
                                     <div className="battery-bar">
                                         <p className="battery">25 kWh</p>
                                     </div>
-                                    <p className="time green">TEMPO + RAPIDO: <span style={{color: '#37FF4F'}}>25 : 35 : 259</span></p>
+                                    <p className="time green">TEMPO + RAPIDO: <span style={{color: '#37FF4F'}} onClick={() => addAposta(1)}>25 : 35 : 259</span></p>
                                     <p className="time red">TEMPO + LENTO: <span style={{color: '#DD052C'}}>32: 24 : 109</span></p>
                                     <p className="time red">ATTACK MODE: <span style={{fontFamily: 'Montserrat, sans-serif', color: '#DD052C'}}>DESATIVADO</span></p>
                                 </div>
@@ -299,14 +312,14 @@ export default function Section2() {
                                     <p>MAHINDRA RACING</p>
                                     <h1>DE VRIES</h1>
                                 </div>
-                                <p className="qttBlitz-bet" id="blitz-bet">0</p>
+                                <p className="qttBlitz-bet" id="blitz-bet">{aposta}</p>
                             </div>
                         </div>
                         <div className="add-guess">
                             <img className="blitz-guess" src={blitzLetter} alt="Blitz" />
                             <div className="Livemore-minus-btns">
-                                <button className="Livemore-btn" id="maisBtn">+</button>
-                                <button className="Liveminus-btn" id="menosBtn">-</button>
+                                <button className="Livemore-btn" id="maisBtn" onClick={() => incrementAposta()}>+</button>
+                                <button className="Liveminus-btn" id="menosBtn" onClick={() => decrementAposta()}>-</button>
                                 <img src={blueBlitz} alt="blitz blue" />
                             </div>
                         </div>
@@ -315,7 +328,7 @@ export default function Section2() {
                     <div className="bet-card right-side">
                         <div className="big-blitz">
                             <img src={blitz} alt="BLITZ-ICON" />
-                            <h1 className="big-blitz" id="multiplicado">0</h1>
+                            <h1 className="big-blitz" id="multiplicado">{aposta}</h1>
                         </div>
                         <h2>MULTIPLICADORES</h2>
                         <div className="multiplicadores">

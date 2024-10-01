@@ -1,7 +1,13 @@
-import styled, { createGlobalStyle } from 'styled-components'
-import logo from '../assets/images/logo.png'
+import { useState } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+import logo from '../assets/images/logo.png';
 
 const GlobalStyle = createGlobalStyle`
+    * {
+        font-family: 'Montserrat';
+        color: white; 
+    }
+
     html {
         display: flex;
         flex-direction: column;
@@ -22,8 +28,10 @@ const GlobalStyle = createGlobalStyle`
 
     label {
         font-family: "Michroma", sans-serif;
-        font-size: 16px;
+        font-size: 13px;
         display: flex;
+        color: white;
+        padding-bottom: 2px;
     }
 
     p {
@@ -35,8 +43,9 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 const Logo = styled.img`
-    width: 250px;
+    width: 330px;
     padding-bottom: 40px;
+    scale: 90%;
 `
 const SignInBox = styled.div`
     background-color: #2210F4;
@@ -47,7 +56,6 @@ const SignInBox = styled.div`
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
-    margin: 0 auto;
 `
 const InputAndTitle = styled.div`
     width: 80%;
@@ -55,39 +63,49 @@ const InputAndTitle = styled.div`
 const Title = styled.h1`
     display: flex;
     justify-content: center;
-    font-weight: 200;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    color: white;
+    padding-bottom: 10px;
 `
 const CampoPreencher = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 30px;
+    width: 100%;
+    padding: 10px;
 `
 const FillName = styled.input`
     display: flex;
     flex-direction: column;
     background-color: #0A012E;
-    width: 100%;
-    height: 30px;
+    width: 180px;
+    height: 20px;
     border-radius: 5px;
     border: 1px solid #0000FF;
+    margin-bottom: 5px;
 `
 const FillEmail = styled.input`
     display: flex;
     flex-direction: column;
     background-color: #0A012E;
-    width: 100%;
-    height: 30px;
+    width: 180px;
+    height: 20px;
     border-radius: 5px;
     border: 1px solid #0000FF;
+    margin-bottom: 5px;
 `
 const FillSenha = styled.input`
     display: flex;
     flex-direction: column;
     background-color: #0A012E;
-    width: 100%;
-    height: 30px;
+    width: 180px;
+    height: 20px;
     border-radius: 5px;
     border: 1px solid #0000FF;
+    margin-bottom: 5px;
 `
 const BtnAgreement = styled.div`
     width: 280px;
@@ -115,33 +133,53 @@ const DivCampo = styled.div`
 `
 
 export default function Register() {
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
+    const armazenarDados = () => {
+        if (!email || !senha || !nome) {
+            alert("Preencha todos os campos!");
+            return;
+        }
+
+        sessionStorage.setItem('nome', nome);
+        sessionStorage.setItem('email', email);
+        sessionStorage.setItem('senha', senha);
+
+        setTimeout(() => {
+            alert('Usuário cadastrado!\nClique em "OK" para ser redirecionado.');
+            window.location.href = ("/login");
+        }, 500);
+    };
+
     return (
         <>
             <GlobalStyle />
-            <Logo src={logo} alt="LOGO FORMULA EMMERSIVE"/>
+            <Logo src={logo} alt="LOGO FORMULA EMMERSIVE" />
             <SignInBox>
                 <InputAndTitle>
                     <Title>Cadastre-se</Title>
                     <CampoPreencher>
                         <DivCampo>
-                            <label htmlFor="nome" id='nameCheck'>Nome de usuário:</label>
-                            <FillName type="text" id="nome"/>
+                            <label htmlFor="nome">Nome de usuário:</label>
+                            <FillName type="text" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} />
                         </DivCampo>
                         <DivCampo>
-                            <label htmlFor="email" id="emailCheck">Digite um E-mail:</label>
-                            <FillEmail type="text" id="email"/>
+                            <label htmlFor="email">Digite um E-mail:</label>
+                            <FillEmail type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </DivCampo>
                         <DivCampo>
-                            <label htmlFor="senha" id="senhaCheck">Digite uma senha:</label>
-                            <FillSenha type="text" id="senha"/>
+                            <label htmlFor="senha">Digite uma senha:</label>
+                            <FillSenha type="password" id="senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
                         </DivCampo>
                     </CampoPreencher>
                 </InputAndTitle>
                 <BtnAgreement>
-                    <Cadastrar id="registrar" onClick={() => armazenarDados('')}>Cadastrar</Cadastrar>
+                    <Cadastrar onClick={armazenarDados}>Cadastrar</Cadastrar>
                 </BtnAgreement>
                 <p>Ao criar uma conta, você está de acordo com nossa política de privacidade.</p>
             </SignInBox>
         </>
-    )
+    );
 }

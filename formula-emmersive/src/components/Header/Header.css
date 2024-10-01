@@ -164,4 +164,6 @@ nav{
     height: 10px;
     margin: 0 5px 0 0;
     animation: pisca 1s ease-in-out infinite alternate;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 1px;
+    border-radius: 50px;
 }

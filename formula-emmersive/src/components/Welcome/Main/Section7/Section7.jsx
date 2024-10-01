@@ -1,5 +1,6 @@
 import './Section7.css'
 import backgroundSectionSeven from '../../../../assets/images/background-section-seven.png'
+import { Link } from 'react-router-dom'
 
 export default function Section7() {
     return (
@@ -11,7 +12,7 @@ export default function Section7() {
             <p>agora voce pode aproveitar nossa plataforma ao maximo</p>
             <div className="background-seven">
                 <img src={backgroundSectionSeven} alt=" fundo seção final" />
-                <a href="../../pages/registerPage/registerPage.html">Acessar Formula E•mmersive</a> 
+                <Link to={'/register'}>Acessar Formula E•mmersive</Link> 
             </div>
         </div>
     )

@@ -2,15 +2,15 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalResponsive = createGlobalStyle`
 
+h1 {
+    font-style: normal;
+}
+
 .divWelcome {
     display: flex;
     flex-direction: column;
     padding-top: 50px;
     align-items: center;
-}
-
-h1 {
-    text-style: normal;
 }
 
 /* RESPONSIVIDADE */

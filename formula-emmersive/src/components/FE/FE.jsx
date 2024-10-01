@@ -1,6 +1,7 @@
 import './FE.css'
 import { createGlobalStyle } from 'styled-components'
 import { GlobalResponsive } from './Media.jsx'
+import { Link } from 'react-router-dom'
 import topPageFEDeco from '../../assets/images/topPageFE-deco.png'
 import fELogo from '../../assets/images/FORMULA E FULL BLUE.png'
 import carrosselFE1 from '../../assets/images/carrosselFE-1.png'
@@ -10,6 +11,9 @@ import carrosselFE4 from '../../assets/images/carrosselFE-4.png'
 import carrosselFE5 from '../../assets/images/carrosselFE-5.png'
 import f1MiniLogo from '../../assets/images/F1-MiniLogo.png'
 import bottomImg from '../../assets/images/bottomPageFE-deco.png'
+import { useState, useEffect } from 'react'
+import { updateBlitz, addBlitz } from '../../script/Home.jsx'
+
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -45,6 +49,47 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export default function F1() {
+    const [imageUrl, setImageUrl] = useState(carrosselFE1)
+    const [blitzCount, setBlitzCount] = useState(0)
+
+    useEffect(() => {
+        const storedCount = updateBlitz()
+        setBlitzCount(storedCount)
+    }, [])
+
+    const handleAddBlitz = (quantity) => {
+        if (imageUrl != carrosselFE5) {
+            addBlitz(quantity)
+        } else {
+            addBlitz(0)
+        }
+        setBlitzCount(updateBlitz())
+    }
+
+    const foward = () => {
+        if (imageUrl === carrosselFE1) {
+            setImageUrl(carrosselFE2)
+        } else if (imageUrl === carrosselFE2) {
+            setImageUrl(carrosselFE3)
+        } else if (imageUrl === carrosselFE3) {
+            setImageUrl(carrosselFE4)
+        } else {
+            setImageUrl(carrosselFE5)
+        }
+    }
+
+    const backward = () => {
+        if (imageUrl === carrosselFE5) {
+            setImageUrl(carrosselFE4)
+        } else if (imageUrl === carrosselFE4) {
+            setImageUrl(carrosselFE3)
+        } else if (imageUrl === carrosselFE3) {
+            setImageUrl(carrosselFE2)
+        } else {
+            setImageUrl(carrosselFE1)
+        }
+    }
+
     return (
         <>
         <GlobalStyle />
@@ -57,34 +102,26 @@ export default function F1() {
                         <div className="carrossel-btns">
                             <a href="#">Compartilhar</a>
                             <div className="slide-btns">
-                                <button className="left" id="voltBtn">⬅</button>
-                                <button className="right" id="proxBtn" onClick={() => proximoSlideFormulaE()}>⮕</button>
+                                <button className="left" id="voltBtn" onClick={() => backward()}>⬅</button>
+                                <button className="right" id="proxBtn" onClick={() => { foward(); handleAddBlitz(100) }}>⮕</button>
                             </div>
                         </div>
                         <div className="slide-container">
                             <div className="slides" id="carrossel">
-                                <div className="slide"><img src={carrosselFE1} alt="slide1" id="slideImg" /></div>
-                                <div className="slide"><img src={carrosselFE2} alt="slide2" id="slideImg" /></div>
-                                <div className="slide"><img src={carrosselFE3} alt="slide3" id="slideImg" /></div>
-                                <div className="slide"><img src={carrosselFE4} alt="slide4" id="slideImg" /></div>
-                                <div className="slide"><img src={carrosselFE5} alt="slide5" id="slideImg" /></div>
+                                <div className="slide"><img src={imageUrl} alt="slide1" id="slideImg" /></div>
                             </div>
                         </div>
                         <div className="slide-text-container">
                             <div className="slides-textos" id="carrosselTexto">
                                 <div className="slide-text"><p>Você sabia que os carros da <span style={{color: '#2210F4'}}>Fórmula E</span> possuem uma opção que ativa um "boost" durante a corrida? Chama-se <span style={{color: '#2210F4'}}>Attack Mode</span>, e dá ao carro cerca de 25 kW de impulso, permitindo aos pilotos ultrapassar os adversários e obter posições melhores!</p></div>
-                                <div className="slide-text"><p>Lorem ipsum dolor, sit amet consectetur <span style={{color: '#2210F4'}}>adipisicing elit</span>. Vitae dolorum facere earum, libero, minima enim maiores provident nostrum, et est commodi laboriosam odio excepturi voluptate. Neque ullam autem dicta dolorum.</p></div>
-                                <div className="slide-text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam <span style={{color: '#2210F4'}}>perferendis</span> eos unde optio perspiciatis mollitia hic. Consequuntur eaque blanditiis inventore, illo sed repellendus cum consectetur vel aperiam non tempore excepturi.</p></div>
-                                <div className="slide-text"><p>Lorem ipsum <span style={{color: '#2210F4'}}>dolor sit</span> amet consectetur adipisicing elit. Sint quidem libero nostrum dolorum eligendi velit magnam, iure hic placeat est ratione dolor, repudiandae eius quia eum cumque impedit, quod architecto.</p></div>
-                                <div className="slide-text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat molestiae ex libero reiciendis hic <span style={{color: '#2210F4'}}>laudantium excepturi</span> ea iusto velit maiores reprehenderit nam, architecto adipisci facere in culpa est? Assumenda, consequatur!</p></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="redirect">
-                    <a href="../../pages/FExF1/formula1.html" onClick={() => proximaPagina()}> <img src={f1MiniLogo} alt="F1 mini logo" /></a>
+                    <Link to={'/f1'}> <img src={f1MiniLogo} alt="F1 mini logo" onClick={() => proximaPagina()} /></Link>
                     <span style={{fontSize: '48px', fontWeight: '100'}}>|</span>
-                    <a href="../../pages/FExF1/formula1.html" style={{textDecoration: 'underline'}} onClick={() => proximaPagina()}>Sobre: Formula 1</a>
+                    <Link to={'/f1'} onClick={() => proximaPagina()}>Sobre: Fórmula 1</Link>
                 </div>
                 <div className="bottomPage-deco"><img className="bottomPageFE-deco" src={bottomImg} alt=" background-decoration" /></div>
             </main>

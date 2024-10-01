@@ -1,6 +1,7 @@
 import './F1.css'
 import { GlobalResponsive } from './Media.jsx'
 import { createGlobalStyle } from 'styled-components'
+import { Link } from 'react-router-dom'
 import topPageF1Deco from '../../assets/images/topPageF1-deco.png'
 import f1Logo from '../../assets/images/FORMULA 1 LOGO.png'
 import carrosselF11 from '../../assets/images/carrosselF1-1.png'
@@ -10,6 +11,8 @@ import carrosselF14 from '../../assets/images/carrosselF1-4.png'
 import carrosselF15 from '../../assets/images/carrosselF1-5.png'
 import fEMiniLogo from '../../assets/images/FE-MiniLogo.png'
 import bottomImg from '../../assets/images/bottomPageF1-deco.png'
+import { useState, useEffect } from 'react'
+import { updateBlitz, addBlitz } from '../../script/Home.jsx'
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -36,6 +39,43 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export default function F1() {
+    const [imageUrl, setImageUrl] = useState(carrosselF11)
+    const [blitzCount, setBlitzCount] = useState(0)
+
+    useEffect(() => {
+        const storedCount = updateBlitz()
+        setBlitzCount(storedCount)
+    }, [])
+
+    const handleAddBlitz = (quantity) => {
+        addBlitz(quantity)
+        setBlitzCount(updateBlitz())
+    }
+
+    const foward = () => {
+        if (imageUrl === carrosselF11) {
+            setImageUrl(carrosselF12)
+        } else if (imageUrl === carrosselF12) {
+            setImageUrl(carrosselF13)
+        } else if (imageUrl === carrosselF13) {
+            setImageUrl(carrosselF14)
+        } else {
+            setImageUrl(carrosselF15)
+        }
+    }
+
+    const backward = () => {
+        if (imageUrl === carrosselF15) {
+            setImageUrl(carrosselF14)
+        } else if (imageUrl === carrosselF14) {
+            setImageUrl(carrosselF13)
+        } else if (imageUrl === carrosselF13) {
+            setImageUrl(carrosselF12)
+        } else {
+            setImageUrl(carrosselF11)
+        }
+    }
+
     return (
         <>
             <GlobalStyle />
@@ -48,34 +88,26 @@ export default function F1() {
                         <div className="carrossel-btns">
                             <a href="#">Compartilhar</a>
                             <div className="slide-btnsf1">
-                                <button className="left" id="voltBtn">⬅</button>
-                                <button className="right" id="proxBtn" onClick={() => proximoSlideFormulaE()}>⮕</button>
+                                <button className="left" id="voltBtn" onClick={() => backward()}>⬅</button>
+                                <button className="right" id="proxBtn" onClick={() => { foward(); handleAddBlitz(100) }}>⮕</button>
                             </div>
                         </div>
                         <div className="slide-containerf1">
                             <div className="slides" id="carrossel">
-                                <div className="slide"><img src={carrosselF11} alt="slide1" id="slideImg" /></div>
-                                <div className="slide"><img src={carrosselF12} alt="slide2" id="slideImg" /></div>
-                                <div className="slide"><img src={carrosselF13} alt="slide3" id="slideImg" /></div>
-                                <div className="slide"><img src={carrosselF14} alt="slide4" id="slideImg" /></div>
-                                <div className="slide"><img src={carrosselF15} alt="slide5" id="slideImg" /></div>
+                                <div className="slide"><img src={imageUrl} alt="slide1" id="slideImg" /></div>
                             </div>
                         </div>
                         <div className="slide-text-container">
                             <div className="slides-textos" id="carrosselTexto">
                                 <div className="slide-text"><p>Os carros modernos de <span style={{color: 'red'}}>F1</span> usam uma mistura de combustível de alta octanagem, semelhante à gasolina sem chumbo, mas otimizada para desempenho. Eles usam cerca de 100-110 kg de <span style={{color: 'red'}}>combustível</span> por corrida, devido a regulamentos rígidos.</p></div>
-                                <div className="slide-text"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.<span style={{color: 'red'}}>Vitae dolorum</span> facere earum, libero, minima enim maiores provident  nostrum, et est commodi laboriosam odio excepturi voluptate. Neque ullam autem dicta dolorum.</p></div>
-                                <div className="slide-text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam <span style={{color: 'red'}}>perferendis</span> eos unde optio perspiciatis mollitia hic. Consequuntur eaque blanditiis<span style={{color: 'red'}}> inventore</span>, illo sed repellendus cum consectetur vel aperiam non tempore excepturi.</p></div>
-                                <div className="slide-text"><p>Lorem ipsum dolor sit amet<span style={{color: 'red'}}>consectetur adipisicing</span> elit. Sint quidem libero nostrum dolorum eligendi velit magnam, iure hic placeat est ratione <span style={{color: 'red'}}>dolor</span>, repudiandae eius quia eum cumque impedit, quod architecto.</p></div>
-                                <div className="slide-text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat molestiae ex libero reiciendis hic<span style={{color: 'red'}}> laudantium </span>excepturi ea iusto velit maiores reprehenderit nam, architecto adipisci facere in culpa est? Assumenda, consequatur!</p></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="redirect">
-                    <a href="../../pages/FExF1/formulaE.html"> <img src={fEMiniLogo} alt="F1 mini logo" onClick={() => proximaPagina()} /></a>
+                    <Link to={'/fe'}> <img src={fEMiniLogo} alt="F1 mini logo" onClick={() => proximaPagina()} /></Link>
                     <span style={{fontSize: '48px', fontWeight: '100'}}>|</span>
-                    <a href="../../pages/FExF1/formulaE.html" onClick={() => proximaPagina()}>Sobre: Formula E</a>
+                    <Link to={'/fe'} onClick={() => proximaPagina()}>Sobre: Fórmula E</Link>
                 </div>
             </main>
             <div className="bottomPage-deco"><img className="bottomPageF1-deco" src={bottomImg} alt="decoração base da pagina" /></div>
